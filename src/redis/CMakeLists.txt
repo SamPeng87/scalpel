@@ -1,0 +1,9 @@
+AUX_SOURCE_DIRECTORY(. REDIS_SRC_LISTS)
+ADD_LIBRARY(scalpelredis_static SHARED ${REDIS_SRC_LISTS})
+
+TARGET_LINK_LIBRARIES(scalpelredis_static hiredis)
+TARGET_LINK_LIBRARIES(scalpelredis_static scalpelutils)
+
+SET_TARGET_PROPERTIES(scalpelredis_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+
+SET_TARGET_PROPERTIES(scalpelredis_static PROPERTIES OUTPUT_NAME "scalpelredis")

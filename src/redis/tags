@@ -1,0 +1,262 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+RedisConfig	redis.h	/^typedef struct RedisConfig {$/;"	s
+RedisConfig	redis.h	/^} RedisConfig;$/;"	t	typeref:struct:RedisConfig
+RedisConfig::host	redis.h	/^    const char *host;$/;"	m	struct:RedisConfig	access:public
+RedisConfig::port	redis.h	/^    int port;$/;"	m	struct:RedisConfig	access:public
+_REDIS_INFO_H	info.h	/^#define _REDIS_INFO_H$/;"	d
+_REDIS_MAIN_H	redis.h	/^#define _REDIS_MAIN_H$/;"	d
+aof_base_size	info.h	/^    long long aof_base_size;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_bufleng	info.h	/^    size_t aof_bufleng;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_current_rewrite_time_sec	info.h	/^    time_t aof_current_rewrite_time_sec;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_current_size	info.h	/^    long long aof_current_size;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_delayed_fsync	info.h	/^    unsigned long aof_delayed_fsync;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_enabled	info.h	/^    bool    aof_enabled;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_last_bgrewrite_status	info.h	/^    sdt aof_last_bgrewrite_status;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_last_rewrite_time_sec	info.h	/^    time_t aof_last_rewrite_time_sec;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_last_write_status	info.h	/^    sdt aof_last_write_status;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_pending_bio_fsync	info.h	/^    unsigned long long aof_pending_bio_fsync;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_pending_rewrite	info.h	/^    int aof_pending_rewrite;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_rewrite_buffer_length	info.h	/^    unsigned long aof_rewrite_buffer_length;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_rewrite_in_progress	info.h	/^    bool    aof_rewrite_in_progress;$/;"	m	struct:redisPersistenceInfo	access:public
+aof_rewrite_scheduled	info.h	/^    int    aof_rewrite_scheduled;$/;"	m	struct:redisPersistenceInfo	access:public
+arch_bits	info.h	/^    bool arch_bits;$/;"	m	struct:redisServerInfo	access:public
+avg_ttl	info.h	/^    long long avg_ttl; $/;"	m	struct:redisKeyInfo	access:public
+blocked	info.h	/^    unsigned short blocked;$/;"	m	struct:redisClientInfo	access:public
+callocInfoMem	info.c	/^#define callocInfoMem(/;"	d	file:
+config_file	info.h	/^    sdt config_file;$/;"	m	struct:redisServerInfo	access:public
+connected	info.h	/^    unsigned short connected;$/;"	m	struct:redisClientInfo	access:public
+connected_slaves	info.h	/^    unsigned connected_slaves;$/;"	m	struct:redisReplicationInfo	access:public
+dbnum	info.h	/^    int dbnum;$/;"	m	struct:redisKeyInfo	access:public
+dbnum	info.h	/^    int dbnum;$/;"	m	struct:redisKeyspaceInfo	access:public
+err	info.h	/^    int err;$/;"	m	struct:redisInfo	access:public
+errstr	info.h	/^    int errstr;$/;"	m	struct:redisInfo	access:public
+evicted_keys	info.h	/^    long long evicted_keys;$/;"	m	struct:redisStatsInfo	access:public
+expired_keys	info.h	/^    long long expired_keys;$/;"	m	struct:redisStatsInfo	access:public
+getRedisInfoChar	info.c	/^char* getRedisInfoChar(redisContext *context) {$/;"	f	signature:(redisContext *context)
+getRedisInfoChar	info.h	/^char *getRedisInfoChar(redisContext *context);$/;"	p	signature:(redisContext *context)
+getRedisInfoObj	info.c	/^redisInfo *getRedisInfoObj(sdt ch){$/;"	f	signature:(sdt ch)
+getRedisInfoObj	info.h	/^redisInfo *getRedisInfoObj(sdt ch);$/;"	p	signature:(sdt ch)
+git_dirty	info.h	/^    long int git_dirty;$/;"	m	struct:redisServerInfo	access:public
+git_sha1	info.h	/^    sdt git_sha1;$/;"	m	struct:redisServerInfo	access:public
+host	redis.h	/^    const char *host;$/;"	m	struct:RedisConfig	access:public
+initRedisConfig	redis.c	/^RedisConfig *initRedisConfig(Config *config){$/;"	f	signature:(Config *config)
+instantaneous_ops_per_sec	info.h	/^    long long instantaneous_ops_per_sec;$/;"	m	struct:redisStatsInfo	access:public
+ip	info.h	/^    sdt ip;$/;"	m	struct:redisSlavesInfo	access:public
+keys	info.h	/^    long long keys;$/;"	m	struct:redisKeyInfo	access:public
+keys	info.h	/^    redisKeyInfo *keys[]; \/\/C99 Only$/;"	m	struct:redisKeyspaceInfo	access:public
+keyspace_hits	info.h	/^    long long keyspace_hits;$/;"	m	struct:redisStatsInfo	access:public
+keyspace_misses	info.h	/^    long long keyspace_misses;$/;"	m	struct:redisStatsInfo	access:public
+lag	info.h	/^    long lag;$/;"	m	struct:redisSlavesInfo	access:public
+latest_fork_usec	info.h	/^    long long latest_fork_usec;$/;"	m	struct:redisStatsInfo	access:public
+loadding	info.h	/^    int loadding;$/;"	m	struct:redisPersistenceInfo	access:public
+loading_eta_seconds	info.h	/^    time_t loading_eta_seconds;$/;"	m	struct:redisPersistenceInfo	access:public
+loading_loaded_bytes	info.h	/^    unsigned long long loading_loaded_bytes;$/;"	m	struct:redisPersistenceInfo	access:public
+loading_loaded_perc	info.h	/^    double loading_loaded_perc;$/;"	m	struct:redisPersistenceInfo	access:public
+loading_start_time	info.h	/^    time_t loading_start_time;$/;"	m	struct:redisPersistenceInfo	access:public
+loading_total_bytes	info.h	/^    unsigned long long loading_total_bytes;$/;"	m	struct:redisPersistenceInfo	access:public
+longest_input_buf	info.h	/^    int longest_input_buf;$/;"	m	struct:redisClientInfo	access:public
+longest_output_list	info.h	/^    int longest_output_list;$/;"	m	struct:redisClientInfo	access:public
+lru_clock	info.h	/^    int      lru_clock;$/;"	m	struct:redisServerInfo	access:public
+master_host	info.h	/^    sdt master_host;$/;"	m	struct:redisReplicationInfo	access:public
+master_last_io_seconds_ago	info.h	/^    int master_last_io_seconds_ago;$/;"	m	struct:redisReplicationInfo	access:public
+master_link_down_since_seconds	info.h	/^    time_t master_link_down_since_seconds;$/;"	m	struct:redisReplicationInfo	access:public
+master_link_status	info.h	/^    sdt master_link_status;$/;"	m	struct:redisReplicationInfo	access:public
+master_repl_offset	info.h	/^    long long master_repl_offset;$/;"	m	struct:redisReplicationInfo	access:public
+master_sync_in_progress	info.h	/^    bool master_sync_in_progress;$/;"	m	struct:redisReplicationInfo	access:public
+master_sync_last_io_seconds_ago	info.h	/^    int master_sync_last_io_seconds_ago;$/;"	m	struct:redisReplicationInfo	access:public
+master_sync_left_bytes	info.h	/^    long long master_sync_left_bytes;$/;"	m	struct:redisReplicationInfo	access:public
+mem_allocator	info.h	/^    sdt mem_allocator;$/;"	m	struct:redisMemoryInfo	access:public
+mem_fragmentation_ratio	info.h	/^    float mem_fragmentation_ratio;$/;"	m	struct:redisMemoryInfo	access:public
+min_slaves_good_slaves	info.h	/^    int min_slaves_good_slaves;$/;"	m	struct:redisReplicationInfo	access:public
+multiplexing_api	info.h	/^    sdt multiplexing_api;$/;"	m	struct:redisServerInfo	access:public
+offset	info.h	/^    long long offset;$/;"	m	struct:redisSlavesInfo	access:public
+port	info.h	/^    int port;$/;"	m	struct:redisReplicationInfo	access:public
+port	info.h	/^    int port;$/;"	m	struct:redisSlavesInfo	access:public
+port	redis.h	/^    int port;$/;"	m	struct:RedisConfig	access:public
+process_id	info.h	/^    unsigned short process_id;$/;"	m	struct:redisServerInfo	access:public
+pubsub_channels	info.h	/^    unsigned long pubsub_channels;$/;"	m	struct:redisStatsInfo	access:public
+pubsub_patterns	info.h	/^    unsigned long pubsub_patterns;$/;"	m	struct:redisStatsInfo	access:public
+rdb_bgsave_in_progress	info.h	/^    bool rdb_bgsave_in_progress;$/;"	m	struct:redisPersistenceInfo	access:public
+rdb_changes_since_last_save	info.h	/^    long long rdb_changes_since_last_save;    $/;"	m	struct:redisPersistenceInfo	access:public
+rdb_current_bgsave_time_sec	info.h	/^    time_t rdb_current_bgsave_time_sec;$/;"	m	struct:redisPersistenceInfo	access:public
+rdb_last_bgsave_status	info.h	/^    sdt rdb_last_bgsave_status;$/;"	m	struct:redisPersistenceInfo	access:public
+rdb_last_bgsave_time_sec	info.h	/^    time_t rdb_last_bgsave_time_sec;$/;"	m	struct:redisPersistenceInfo	access:public
+rdb_last_save_time	info.h	/^    time_t rdb_last_save_time;$/;"	m	struct:redisPersistenceInfo	access:public
+redisCPUInfo	info.h	/^    redisCPUInfo *redisCPUInfo;$/;"	m	struct:redisInfo	access:public
+redisCPUInfo	info.h	/^typedef struct redisCPUInfo {$/;"	s
+redisCPUInfo	info.h	/^} redisCPUInfo;$/;"	t	typeref:struct:redisCPUInfo
+redisCPUInfo::used_cpu_sys	info.h	/^   float used_cpu_sys;$/;"	m	struct:redisCPUInfo	access:public
+redisCPUInfo::used_cpu_sys_children	info.h	/^   float used_cpu_sys_children;$/;"	m	struct:redisCPUInfo	access:public
+redisCPUInfo::used_cpu_user	info.h	/^   float used_cpu_user;$/;"	m	struct:redisCPUInfo	access:public
+redisCPUInfo::used_cpu_user_children	info.h	/^   float used_cpu_user_children;$/;"	m	struct:redisCPUInfo	access:public
+redisClientInfo	info.h	/^    redisClientInfo *redisClientInfo;$/;"	m	struct:redisInfo	access:public
+redisClientInfo	info.h	/^typedef struct redisClientInfo {$/;"	s
+redisClientInfo	info.h	/^} redisClientInfo;$/;"	t	typeref:struct:redisClientInfo
+redisClientInfo::blocked	info.h	/^    unsigned short blocked;$/;"	m	struct:redisClientInfo	access:public
+redisClientInfo::connected	info.h	/^    unsigned short connected;$/;"	m	struct:redisClientInfo	access:public
+redisClientInfo::longest_input_buf	info.h	/^    int longest_input_buf;$/;"	m	struct:redisClientInfo	access:public
+redisClientInfo::longest_output_list	info.h	/^    int longest_output_list;$/;"	m	struct:redisClientInfo	access:public
+redisInfo	info.h	/^typedef struct redisInfo{$/;"	s
+redisInfo	info.h	/^} redisInfo;$/;"	t	typeref:struct:redisInfo
+redisInfo::err	info.h	/^    int err;$/;"	m	struct:redisInfo	access:public
+redisInfo::errstr	info.h	/^    int errstr;$/;"	m	struct:redisInfo	access:public
+redisInfo::redisCPUInfo	info.h	/^    redisCPUInfo *redisCPUInfo;$/;"	m	struct:redisInfo	access:public
+redisInfo::redisClientInfo	info.h	/^    redisClientInfo *redisClientInfo;$/;"	m	struct:redisInfo	access:public
+redisInfo::redisKeyspaceInfo	info.h	/^    redisKeyspaceInfo *redisKeyspaceInfo;$/;"	m	struct:redisInfo	access:public
+redisInfo::redisMemoryInfo	info.h	/^    redisMemoryInfo *redisMemoryInfo;$/;"	m	struct:redisInfo	access:public
+redisInfo::redisPersistenceInfo	info.h	/^    redisPersistenceInfo *redisPersistenceInfo;$/;"	m	struct:redisInfo	access:public
+redisInfo::redisReplicationInfo	info.h	/^    redisReplicationInfo *redisReplicationInfo;$/;"	m	struct:redisInfo	access:public
+redisInfo::redisServerInfo	info.h	/^    redisServerInfo *redisServerInfo;$/;"	m	struct:redisInfo	access:public
+redisInfo::redisStatsInfo	info.h	/^    redisStatsInfo *redisStatsInfo;$/;"	m	struct:redisInfo	access:public
+redisKeyInfo	info.h	/^typedef struct redisKeyInfo {$/;"	s
+redisKeyInfo	info.h	/^} redisKeyInfo;$/;"	t	typeref:struct:redisKeyInfo
+redisKeyInfo::avg_ttl	info.h	/^    long long avg_ttl; $/;"	m	struct:redisKeyInfo	access:public
+redisKeyInfo::dbnum	info.h	/^    int dbnum;$/;"	m	struct:redisKeyInfo	access:public
+redisKeyInfo::keys	info.h	/^    long long keys;$/;"	m	struct:redisKeyInfo	access:public
+redisKeyInfo::vkeys	info.h	/^    long long vkeys;$/;"	m	struct:redisKeyInfo	access:public
+redisKeyspaceInfo	info.h	/^    redisKeyspaceInfo *redisKeyspaceInfo;$/;"	m	struct:redisInfo	access:public
+redisKeyspaceInfo	info.h	/^typedef struct redisKeyspaceInfo{$/;"	s
+redisKeyspaceInfo	info.h	/^} redisKeyspaceInfo;$/;"	t	typeref:struct:redisKeyspaceInfo
+redisKeyspaceInfo::dbnum	info.h	/^    int dbnum;$/;"	m	struct:redisKeyspaceInfo	access:public
+redisKeyspaceInfo::keys	info.h	/^    redisKeyInfo *keys[]; \/\/C99 Only$/;"	m	struct:redisKeyspaceInfo	access:public
+redisMemoryInfo	info.h	/^    redisMemoryInfo *redisMemoryInfo;$/;"	m	struct:redisInfo	access:public
+redisMemoryInfo	info.h	/^typedef struct redisMemoryInfo {$/;"	s
+redisMemoryInfo	info.h	/^} redisMemoryInfo;$/;"	t	typeref:struct:redisMemoryInfo
+redisMemoryInfo::mem_allocator	info.h	/^    sdt mem_allocator;$/;"	m	struct:redisMemoryInfo	access:public
+redisMemoryInfo::mem_fragmentation_ratio	info.h	/^    float mem_fragmentation_ratio;$/;"	m	struct:redisMemoryInfo	access:public
+redisMemoryInfo::used_memory	info.h	/^    long long used_memory;$/;"	m	struct:redisMemoryInfo	access:public
+redisMemoryInfo::used_memory_human	info.h	/^    sdt used_memory_human;$/;"	m	struct:redisMemoryInfo	access:public
+redisMemoryInfo::used_memory_lua	info.h	/^    long long used_memory_lua;$/;"	m	struct:redisMemoryInfo	access:public
+redisMemoryInfo::used_memory_peak	info.h	/^    long long used_memory_peak;$/;"	m	struct:redisMemoryInfo	access:public
+redisMemoryInfo::used_memory_peak_human	info.h	/^    sdt used_memory_peak_human;$/;"	m	struct:redisMemoryInfo	access:public
+redisMemoryInfo::used_memory_rss	info.h	/^    long long used_memory_rss;$/;"	m	struct:redisMemoryInfo	access:public
+redisPersistenceInfo	info.h	/^    redisPersistenceInfo *redisPersistenceInfo;$/;"	m	struct:redisInfo	access:public
+redisPersistenceInfo	info.h	/^typedef struct redisPersistenceInfo{$/;"	s
+redisPersistenceInfo	info.h	/^} redisPersistenceInfo;$/;"	t	typeref:struct:redisPersistenceInfo
+redisPersistenceInfo::aof_base_size	info.h	/^    long long aof_base_size;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_bufleng	info.h	/^    size_t aof_bufleng;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_current_rewrite_time_sec	info.h	/^    time_t aof_current_rewrite_time_sec;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_current_size	info.h	/^    long long aof_current_size;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_delayed_fsync	info.h	/^    unsigned long aof_delayed_fsync;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_enabled	info.h	/^    bool    aof_enabled;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_last_bgrewrite_status	info.h	/^    sdt aof_last_bgrewrite_status;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_last_rewrite_time_sec	info.h	/^    time_t aof_last_rewrite_time_sec;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_last_write_status	info.h	/^    sdt aof_last_write_status;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_pending_bio_fsync	info.h	/^    unsigned long long aof_pending_bio_fsync;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_pending_rewrite	info.h	/^    int aof_pending_rewrite;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_rewrite_buffer_length	info.h	/^    unsigned long aof_rewrite_buffer_length;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_rewrite_in_progress	info.h	/^    bool    aof_rewrite_in_progress;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::aof_rewrite_scheduled	info.h	/^    int    aof_rewrite_scheduled;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::loadding	info.h	/^    int loadding;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::loading_eta_seconds	info.h	/^    time_t loading_eta_seconds;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::loading_loaded_bytes	info.h	/^    unsigned long long loading_loaded_bytes;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::loading_loaded_perc	info.h	/^    double loading_loaded_perc;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::loading_start_time	info.h	/^    time_t loading_start_time;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::loading_total_bytes	info.h	/^    unsigned long long loading_total_bytes;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::rdb_bgsave_in_progress	info.h	/^    bool rdb_bgsave_in_progress;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::rdb_changes_since_last_save	info.h	/^    long long rdb_changes_since_last_save;    $/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::rdb_current_bgsave_time_sec	info.h	/^    time_t rdb_current_bgsave_time_sec;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::rdb_last_bgsave_status	info.h	/^    sdt rdb_last_bgsave_status;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::rdb_last_bgsave_time_sec	info.h	/^    time_t rdb_last_bgsave_time_sec;$/;"	m	struct:redisPersistenceInfo	access:public
+redisPersistenceInfo::rdb_last_save_time	info.h	/^    time_t rdb_last_save_time;$/;"	m	struct:redisPersistenceInfo	access:public
+redisReplicationInfo	info.h	/^    redisReplicationInfo *redisReplicationInfo;$/;"	m	struct:redisInfo	access:public
+redisReplicationInfo	info.h	/^typedef struct redisReplicationInfo{$/;"	s
+redisReplicationInfo	info.h	/^} redisReplicationInfo;$/;"	t	typeref:struct:redisReplicationInfo
+redisReplicationInfo::connected_slaves	info.h	/^    unsigned connected_slaves;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::master_host	info.h	/^    sdt master_host;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::master_last_io_seconds_ago	info.h	/^    int master_last_io_seconds_ago;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::master_link_down_since_seconds	info.h	/^    time_t master_link_down_since_seconds;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::master_link_status	info.h	/^    sdt master_link_status;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::master_repl_offset	info.h	/^    long long master_repl_offset;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::master_sync_in_progress	info.h	/^    bool master_sync_in_progress;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::master_sync_last_io_seconds_ago	info.h	/^    int master_sync_last_io_seconds_ago;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::master_sync_left_bytes	info.h	/^    long long master_sync_left_bytes;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::min_slaves_good_slaves	info.h	/^    int min_slaves_good_slaves;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::port	info.h	/^    int port;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::repl_backlog_active	info.h	/^    bool repl_backlog_active;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::repl_backlog_first_byte_offset	info.h	/^    long long repl_backlog_first_byte_offset;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::repl_backlog_histlen	info.h	/^    long long repl_backlog_histlen;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::repl_backlog_size	info.h	/^    long long repl_backlog_size;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::role	info.h	/^    sdt role;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::slave_priority	info.h	/^    int slave_priority;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::slave_read_only	info.h	/^    int slave_read_only;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::slave_repl_offset	info.h	/^    unsigned long long slave_repl_offset;$/;"	m	struct:redisReplicationInfo	access:public
+redisReplicationInfo::slaves	info.h	/^    redisSlavesInfo *slaves[];$/;"	m	struct:redisReplicationInfo	access:public
+redisRun	redis.c	/^void redisRun(Config *config){$/;"	f	signature:(Config *config)
+redisRun	redis.h	/^void redisRun(Config *config);$/;"	p	signature:(Config *config)
+redisServerInfo	info.h	/^    redisServerInfo *redisServerInfo;$/;"	m	struct:redisInfo	access:public
+redisServerInfo	info.h	/^typedef struct redisServerInfo{$/;"	s
+redisServerInfo	info.h	/^} redisServerInfo;$/;"	t	typeref:struct:redisServerInfo
+redisServerInfo::arch_bits	info.h	/^    bool arch_bits;$/;"	m	struct:redisServerInfo	access:public
+redisServerInfo::config_file	info.h	/^    sdt config_file;$/;"	m	struct:redisServerInfo	access:public
+redisServerInfo::git_dirty	info.h	/^    long int git_dirty;$/;"	m	struct:redisServerInfo	access:public
+redisServerInfo::git_sha1	info.h	/^    sdt git_sha1;$/;"	m	struct:redisServerInfo	access:public
+redisServerInfo::lru_clock	info.h	/^    int      lru_clock;$/;"	m	struct:redisServerInfo	access:public
+redisServerInfo::multiplexing_api	info.h	/^    sdt multiplexing_api;$/;"	m	struct:redisServerInfo	access:public
+redisServerInfo::process_id	info.h	/^    unsigned short process_id;$/;"	m	struct:redisServerInfo	access:public
+redisServerInfo::run_id	info.h	/^    unsigned short run_id;$/;"	m	struct:redisServerInfo	access:public
+redisServerInfo::tcp_port	info.h	/^    int tcp_port;$/;"	m	struct:redisServerInfo	access:public
+redisServerInfo::uptime_in_days	info.h	/^    time_t   uptime_in_days;$/;"	m	struct:redisServerInfo	access:public
+redisServerInfo::uptime_in_seconds	info.h	/^    time_t   uptime_in_seconds;$/;"	m	struct:redisServerInfo	access:public
+redisServerInfo::version	info.h	/^    sdt version;$/;"	m	struct:redisServerInfo	access:public
+redisSlavesInfo	info.h	/^typedef struct redisSlavesInfo {$/;"	s
+redisSlavesInfo	info.h	/^} redisSlavesInfo;$/;"	t	typeref:struct:redisSlavesInfo
+redisSlavesInfo::ip	info.h	/^    sdt ip;$/;"	m	struct:redisSlavesInfo	access:public
+redisSlavesInfo::lag	info.h	/^    long lag;$/;"	m	struct:redisSlavesInfo	access:public
+redisSlavesInfo::offset	info.h	/^    long long offset;$/;"	m	struct:redisSlavesInfo	access:public
+redisSlavesInfo::port	info.h	/^    int port;$/;"	m	struct:redisSlavesInfo	access:public
+redisSlavesInfo::state	info.h	/^    sdt state;$/;"	m	struct:redisSlavesInfo	access:public
+redisStatsInfo	info.h	/^    redisStatsInfo *redisStatsInfo;$/;"	m	struct:redisInfo	access:public
+redisStatsInfo	info.h	/^typedef struct redisStatsInfo{$/;"	s
+redisStatsInfo	info.h	/^} redisStatsInfo;$/;"	t	typeref:struct:redisStatsInfo
+redisStatsInfo::evicted_keys	info.h	/^    long long evicted_keys;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::expired_keys	info.h	/^    long long expired_keys;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::instantaneous_ops_per_sec	info.h	/^    long long instantaneous_ops_per_sec;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::keyspace_hits	info.h	/^    long long keyspace_hits;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::keyspace_misses	info.h	/^    long long keyspace_misses;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::latest_fork_usec	info.h	/^    long long latest_fork_usec;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::pubsub_channels	info.h	/^    unsigned long pubsub_channels;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::pubsub_patterns	info.h	/^    unsigned long pubsub_patterns;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::rejected_connections	info.h	/^    long long rejected_connections;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::sync_full	info.h	/^    long long sync_full;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::sync_partial_err	info.h	/^    long long sync_partial_err;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::sync_partial_ok	info.h	/^    long long sync_partial_ok;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::total_commands_processed	info.h	/^    long long total_commands_processed;$/;"	m	struct:redisStatsInfo	access:public
+redisStatsInfo::total_connections_received	info.h	/^    long long total_connections_received;$/;"	m	struct:redisStatsInfo	access:public
+rejected_connections	info.h	/^    long long rejected_connections;$/;"	m	struct:redisStatsInfo	access:public
+repl_backlog_active	info.h	/^    bool repl_backlog_active;$/;"	m	struct:redisReplicationInfo	access:public
+repl_backlog_first_byte_offset	info.h	/^    long long repl_backlog_first_byte_offset;$/;"	m	struct:redisReplicationInfo	access:public
+repl_backlog_histlen	info.h	/^    long long repl_backlog_histlen;$/;"	m	struct:redisReplicationInfo	access:public
+repl_backlog_size	info.h	/^    long long repl_backlog_size;$/;"	m	struct:redisReplicationInfo	access:public
+role	info.h	/^    sdt role;$/;"	m	struct:redisReplicationInfo	access:public
+run_id	info.h	/^    unsigned short run_id;$/;"	m	struct:redisServerInfo	access:public
+slave_priority	info.h	/^    int slave_priority;$/;"	m	struct:redisReplicationInfo	access:public
+slave_read_only	info.h	/^    int slave_read_only;$/;"	m	struct:redisReplicationInfo	access:public
+slave_repl_offset	info.h	/^    unsigned long long slave_repl_offset;$/;"	m	struct:redisReplicationInfo	access:public
+slaves	info.h	/^    redisSlavesInfo *slaves[];$/;"	m	struct:redisReplicationInfo	access:public
+state	info.h	/^    sdt state;$/;"	m	struct:redisSlavesInfo	access:public
+sync_full	info.h	/^    long long sync_full;$/;"	m	struct:redisStatsInfo	access:public
+sync_partial_err	info.h	/^    long long sync_partial_err;$/;"	m	struct:redisStatsInfo	access:public
+sync_partial_ok	info.h	/^    long long sync_partial_ok;$/;"	m	struct:redisStatsInfo	access:public
+tcp_port	info.h	/^    int tcp_port;$/;"	m	struct:redisServerInfo	access:public
+total_commands_processed	info.h	/^    long long total_commands_processed;$/;"	m	struct:redisStatsInfo	access:public
+total_connections_received	info.h	/^    long long total_connections_received;$/;"	m	struct:redisStatsInfo	access:public
+uptime_in_days	info.h	/^    time_t   uptime_in_days;$/;"	m	struct:redisServerInfo	access:public
+uptime_in_seconds	info.h	/^    time_t   uptime_in_seconds;$/;"	m	struct:redisServerInfo	access:public
+used_cpu_sys	info.h	/^   float used_cpu_sys;$/;"	m	struct:redisCPUInfo	access:public
+used_cpu_sys_children	info.h	/^   float used_cpu_sys_children;$/;"	m	struct:redisCPUInfo	access:public
+used_cpu_user	info.h	/^   float used_cpu_user;$/;"	m	struct:redisCPUInfo	access:public
+used_cpu_user_children	info.h	/^   float used_cpu_user_children;$/;"	m	struct:redisCPUInfo	access:public
+used_memory	info.h	/^    long long used_memory;$/;"	m	struct:redisMemoryInfo	access:public
+used_memory_human	info.h	/^    sdt used_memory_human;$/;"	m	struct:redisMemoryInfo	access:public
+used_memory_lua	info.h	/^    long long used_memory_lua;$/;"	m	struct:redisMemoryInfo	access:public
+used_memory_peak	info.h	/^    long long used_memory_peak;$/;"	m	struct:redisMemoryInfo	access:public
+used_memory_peak_human	info.h	/^    sdt used_memory_peak_human;$/;"	m	struct:redisMemoryInfo	access:public
+used_memory_rss	info.h	/^    long long used_memory_rss;$/;"	m	struct:redisMemoryInfo	access:public
+version	info.h	/^    sdt version;$/;"	m	struct:redisServerInfo	access:public
+vkeys	info.h	/^    long long vkeys;$/;"	m	struct:redisKeyInfo	access:public
