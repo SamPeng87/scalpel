@@ -170,5 +170,5 @@ typedef struct redisInfo{
 
 char *getRedisInfoChar(redisContext *context);
 
-redisInfo *getRedisInfoObj(sdt ch);
+redisInfo *getRedisInfoObj(sds ch);
 #endif

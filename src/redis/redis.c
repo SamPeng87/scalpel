@@ -41,7 +41,6 @@ void redisRun(Config *config){
         printf("redis host is %s ,port is %d",redisConfig->host,redisConfig->port);
         redisContext *redis = redisConnect(redisConfig->host,redisConfig->port); 
         char *infoChar = getRedisInfoChar(redis); 
-        printf("start %s \n",infoChar);
         redisInfo *infoObj = getRedisInfoObj(infoChar);
         printf("end \n");
     }
