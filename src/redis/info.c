@@ -110,6 +110,7 @@ redisInfo *getRedisInfoObj(dst ch){
         return rInfo;
     }
 
+
     if( (strncmp(ch,"ERR",2)) == 0){
         rInfo->err = 2;
         dst s= dsnew("redis info can't support command:");
