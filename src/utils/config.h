@@ -17,6 +17,9 @@
  */
 #ifndef _UTILS_CONFIG_H
 #define _UTILS_CONFIG_H
+
+#define isNull(o) (NULL==o)
+
 typedef struct Config {
     int test;
 } Config;

@@ -16,64 +16,118 @@
  * =====================================================================================
  */
 #include <stdlib.h>
-#include <strings.h>
+#include <string.h>
 #include <stdio.h>
 
 #include "info.h"
 #include "../utils/cmalloc.h"
+#include "../utils/strings.h"
+#include "../utils/config.h"
+
+#define parseKeyAndValue(s,key,value) \
+    int len = 0; \
+    while(*s){ \
+        if(*s == ':'){ \
+            *s = '\0'; \
+            key = s-len; \
+            value = s+1; \
+        } \
+        len ++; \
+        ++s; \
+    } \
+;
 
 #define INFO_COMMAND "info"
 
-char *getRedisInfoChar(redisContext *context) {
+redisReply *getRedisInfoChar(redisContext *context) {
    const char* infoCommand = INFO_COMMAND; 
-   redisReply* reply = (redisReply*) redisCommand(context,infoCommand);
-   int len = strlen(reply->str);
-   char *str = cmalloc(len+1);
-   memcpy(str,reply->str,len);
-   str[len+1] = '\0';
-   freeReplyObject(reply);
-   return str;
+   return (redisReply*) redisCommand(context,infoCommand);
 }
 
-redisInfo *getRedisInfoObj(sds ch){
+char **getInfoByString(dst ch,int *count){
+    int slots =5;
+    char **splits = cmalloc(sizeof(char *)*slots);
+
+    int i=0;
+    int len=0;
+    int start=0;
+    do{
+        if(*ch == '\n'){
+            if(slots < i+2){
+                char **newsplits;
+                slots *= 2;
+                newsplits = crealloc(splits,sizeof(char *)*slots);
+                if(isNull(newsplits)) goto cleanup;
+                splits = newsplits;
+            }
+            *ch = '\0';
+
+            if(start == 0 ){
+                splits[i] = ch-(len-start);
+            }else{
+                splits[i] = ch-(len-start-1);
+            }
+            start = len;
+            i++;
+        }
+        len ++;
+        ++ch;
+    }while(*ch);
+    *count = i;
+    return splits;
+cleanup :
+    {
+        cfree(splits);
+        *count =0;
+        return NULL;
+    }
+}
+
+void switchValueOfObj(redisInfo *rInfo,char *key,char *value){
+    //TODO need impl
+    printf("%s\n",key);
+}
+
+
+void parseInfo(redisInfo *rInfo,char **info,int count){
+    int j=0;
+    for(;j< count;j++){
+        char *rik = info[j]; 
+        char *key = NULL;
+        char *value = NULL;
+        parseKeyAndValue(rik,key,value);
+        switchValueOfObj(rInfo,key,value);
+    }
+    
+}
+
+redisInfo *getRedisInfoObj(dst ch){
     redisInfo *rInfo = ccalloc(sizeof(redisInfo));
+    char** info;
     if(NULL == ch){
         rInfo->err = 1;
         rInfo->errstr = "redis info is null";
         return rInfo;
     }
+
     if( (strncmp(ch,"ERR",2)) == 0){
         rInfo->err = 2;
-        rInfo->errstr = strcat("redis info can't support command ",INFO_COMMAND);
+        dst s= dsnew("redis info can't support command:");
+        rInfo->errstr = dscat(s,INFO_COMMAND);
         return rInfo;
     }
 
-    printf("3\n");
-    redisServerInfo *rServerInfo = ccalloc(sizeof(redisServerInfo));
-    redisClientInfo *rClientInfo = ccalloc(sizeof(redisClientInfo));
-    redisPersistenceInfo *rPersistenceInfo = ccalloc(sizeof(redisPersistenceInfo));
-    redisMemoryInfo *rMemoryInfo = ccalloc(sizeof(redisMemoryInfo));
-    redisStatsInfo *rStatsInfo = ccalloc(sizeof(redisStatsInfo));
-    redisCPUInfo *rCPUInfo = ccalloc(sizeof(redisCPUInfo));
-    redisKeyspaceInfo *rKeyInfo = ccalloc(sizeof(redisKeyspaceInfo));
-    redisReplicationInfo *rReplicationInfo = ccalloc(sizeof(redisReplicationInfo));
 
-    rInfo->redisServerInfo = rServerInfo;
-    rInfo->redisCPUInfo = rCPUInfo;
-    rInfo->redisClientInfo = rClientInfo;
-    rInfo->redisPersistenceInfo = rPersistenceInfo;
-    rInfo->redisMemoryInfo = rMemoryInfo;
-    rInfo->redisStatsInfo = rStatsInfo;
-    rInfo->redisKeyspaceInfo = rKeyInfo;
-    rInfo->redisReplicationInfo = rReplicationInfo;
+    int len=0;
+    info = getInfoByString(ch,&len);
 
-    
-
-    printf("test1 %zu;%zu;%zu\n",cmalloc_used_memory(),cmalloc_get_rss(),cmalloc_get_private_dirty());
-    cfree(ch);
-    cfree(rStatsInfo);
-    printf("test1 %zu;%zu;%zu\n",cmalloc_used_memory(),cmalloc_get_rss(),cmalloc_get_private_dirty());
-
-    return NULL;
+    if(isNull(info)){
+        rInfo->err = 3;
+        rInfo->errstr = dsnew("parse redis info error");
+        return rInfo;
+    }
+    parseInfo(rInfo,info,len);
+    return rInfo;
 }
+
 

@@ -56,7 +56,7 @@ void *cmalloc(size_t size);
 void *ccalloc(size_t size);
 void *crealloc(void *ptr, size_t size);
 void cfree(void *ptr);
-char *cstrdup(sdt s);
+char *cstrdup(cdst s);
 size_t cmalloc_used_memory(void);
 void cmalloc_enable_thread_safeness(void);
 void cmalloc_set_oom_handler(void (*oom_handler)(size_t));

@@ -107,7 +107,6 @@ void *cmalloc(size_t size){
     void *ptr = malloc(size+PREFIX_SIZE);
 
     if (!ptr) cmalloc_oom_handler(size);
-    printf("test %zu;\n",size);
 #ifdef HAVE_MALLOC_SIZE
     update_cmalloc_stat_alloc(cmalloc_size(ptr));
     return ptr;
@@ -133,7 +132,7 @@ void *ccalloc(size_t size) {
 #endif
 }
 
-void *crealoc(void *ptr, size_t size){
+void *crealloc(void *ptr, size_t size){
 #ifndef HAVE_MALLOC_SIZE
     void *realptr;
 #endif
@@ -188,7 +187,7 @@ void cfree(void *ptr){
 #endif
 }
 
-char *cstrdup(sdt s){
+char *cstrdup(cdst s){
     size_t l = strlen(s) + 1;
     char *p = cmalloc(l);
     memcpy(p,s,l);

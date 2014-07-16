@@ -1,4 +1,4 @@
-/* SDSLib, A C dynamic strings library
+/* dsLib, A C dynamic strings library
  *
  * Copyright (c) 2006-2010, Salvatore Sanfilippo <antirez at gmail dot com>
  * All rights reserved.
@@ -30,68 +30,70 @@
 
 #ifndef _UTILS_STRINGS
 #define _UTILS_STRINGS
-#define SDS_MAX_PREALLOC (1024*1024)
+#define ds_MAX_PREALLOC (1024*1024)
 #include <sys/types.h>
 #include <stdarg.h>
 
-typedef const char *sdt;
-typedef char *sds;
+typedef const char *cdst;
+typedef char *dst;
 
-struct sdshdr{
+struct dshdr{
     int len;
     int free;
     char buf[];
 };
 
-static inline size_t sdslen(sdt s){
-    struct sdshdr *sh = (void*)(s-(sizeof(struct sdshdr)));
+static inline size_t dslen(cdst s) {
+    struct dshdr *sh = (void*)(s-(sizeof(struct dshdr)));
     return sh->len;
 }
 
-static inline size_t sdsavail(sdt s){
-    struct sdshdr *sh = (void*)(s-(sizeof(struct sdshdr)));
+static inline size_t dsavail(cdst s) {
+    struct dshdr *sh = (void*)(s-(sizeof(struct dshdr)));
     return sh->free;
 }
 
-sds sdtnewlen(sdt init,size_t initlen);
-sds sdsnew(sdt init);
-sds sdsempty(void);
-size_t sdslen(sdt s);
-sds sdsup(sdt s);
-void sdsfree(sds s);
-size_t sdsavail(sdt s);
-sds sdsgrowzero(sds s, size_t len);
-sds sdscatlen(sds s, const void *t, size_t len);
-sds sdscat(sds s, sdt t);
-sds sdscatsds(sds s, sdt t);
-sds sdscpylen(sds s, sdt t,size_t len);
-sds sdscpy(sds s, sdt t);
+
+dst dtnewlen(cdst init,size_t initlen);
+dst dsnew(cdst init);
+dst dsempty(void);
+size_t dslen(cdst s);
+dst dsup(cdst s);
+void dsfree(dst s);
+size_t dsavail(cdst s);
+dst dsgrowzero(dst s, size_t len);
+dst dscatlen(dst s, const void *t, size_t len);
+dst dscat(dst s, cdst t);
+dst dscatds(dst s, cdst t);
+dst dscpylen(dst s, cdst t,size_t len);
+dst dscpy(dst s, cdst t);
 #ifdef __GNUC__
-sds sdscatprintf(sds s,sdt fmt, ...)
+dst dscatprintf(dst s,cdst fmt, ...)
     __attribute__((format(printf,2,3)));
 #else
-sds sdscatprintf(sds s,sdt fmt, ...);
+dst dscatprintf(dst s,cdst fmt, ...);
 #endif
 
-sds sdscatfmt(sds s,sdt fmt, ...);
-sds sdstrim(sds s, sdt cset);
-void sdsrange(sds s, int start, int end);
-void sdsupdatelen(sds s);
-void clear(sds s);
-int sdscmp(sdt s1,sdt s2);
-sds *sdssplitlen(sdt s,int len,sdt sep,int seplen,int count);
-void sdsfreesplitres(sds *tokens,int count);
-void sdstolower(sds s);
-void sdstoupper(sds s);
-sds sdsfromlonglong(long long value);
-sds sdscatrepr(sds s, sdt p, size_t len);
-sds *sdssplitargs(sdt line,int *argc);
-sds sdsmapchars(sds s,sdt from,sdt to,size_t setlen);
-sds sdsjoin(char **argv,int argc,char *sep);
+dst dscatfmt(dst s,cdst fmt, ...);
+dst dstrim(dst s, cdst cset);
+void dsrange(dst s, int start, int end);
+void dsupdatelen(dst s);
+void clear(dst s);
+int dscmp(cdst s1,cdst s2);
+dst *dssplitlen(cdst s,int len,cdst sep,int seplen,int count);
+void dsfreesplitres(dst *tokens,int count);
+void dstolower(dst s);
+void dstoupper(dst s);
+dst dsfromlonglong(long long value);
+dst dscatrepr(dst s, cdst p, size_t len);
+dst *dssplitargs(cdst line,int *argc);
+dst dsmapchars(dst s,cdst from,cdst to,size_t setlen);
+dst dsjoin(char **argv,int argc,char *sep);
 
-sds sdsMakeRoomFor(sds s,size_t addlen);
-void sdsIncrLen(sds s, int incr);
-sds sdsRemoveFreeSpace(sds s);
-size_t sdsAllocSize(sds s);
+dst dsMakeRoomFor(dst s,size_t addlen);
+void dsIncrLen(dst s, int incr);
+dst dsRemoveFreeSpace(dst s);
+size_t dsAllocSize(dst s);
+
 
 #endif

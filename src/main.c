@@ -21,6 +21,7 @@
 
 #include "utils/config.h"
 #include "redis/redis.h"
+#include "utils/strings.h"
 
 int main(int argc, char const* argv[])
 {

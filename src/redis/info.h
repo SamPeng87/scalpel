@@ -24,17 +24,17 @@
 
 
 typedef struct redisServerInfo{
-    sdt version;
-    sdt git_sha1;
+    cdst version;
+    cdst git_sha1;
     long int git_dirty;
     bool arch_bits;
-    sdt multiplexing_api;
+    cdst multiplexing_api;
     unsigned short process_id;
     unsigned short run_id;
     time_t   uptime_in_seconds;
     time_t   uptime_in_days;
     int      lru_clock;
-    sdt config_file;
+    cdst config_file;
     int tcp_port;
     
 } redisServerInfo;
@@ -52,9 +52,9 @@ typedef struct redisMemoryInfo {
     long long used_memory_peak;
     long long used_memory_lua;
     float mem_fragmentation_ratio;
-    sdt used_memory_human;
-    sdt used_memory_peak_human;
-    sdt mem_allocator;
+    cdst used_memory_human;
+    cdst used_memory_peak_human;
+    cdst mem_allocator;
 } redisMemoryInfo;
 
 typedef struct redisPersistenceInfo{
@@ -62,7 +62,7 @@ typedef struct redisPersistenceInfo{
     long long rdb_changes_since_last_save;    
     bool rdb_bgsave_in_progress;
     time_t rdb_last_save_time;
-    sdt rdb_last_bgsave_status;
+    cdst rdb_last_bgsave_status;
     time_t rdb_last_bgsave_time_sec;
     time_t rdb_current_bgsave_time_sec;
     bool    aof_enabled;
@@ -70,8 +70,8 @@ typedef struct redisPersistenceInfo{
     int    aof_rewrite_scheduled;
     time_t aof_last_rewrite_time_sec;
     time_t aof_current_rewrite_time_sec;
-    sdt aof_last_bgrewrite_status;
-    sdt aof_last_write_status;
+    cdst aof_last_bgrewrite_status;
+    cdst aof_last_write_status;
     long long aof_current_size;
     long long aof_base_size;
     int aof_pending_rewrite;
@@ -104,18 +104,18 @@ typedef struct redisStatsInfo{
 } redisStatsInfo;
 
 typedef struct redisSlavesInfo {
-    sdt ip;
+    cdst ip;
     int port;
-    sdt state;
+    cdst state;
     long long offset;
     long lag;
 } redisSlavesInfo;
 
 typedef struct redisReplicationInfo{
-    sdt role;
-    sdt master_host;
+    cdst role;
+    cdst master_host;
     int port;
-    sdt master_link_status;
+    cdst master_link_status;
     int master_last_io_seconds_ago;
     bool master_sync_in_progress;
     unsigned long long slave_repl_offset;
@@ -156,7 +156,7 @@ typedef struct redisKeyspaceInfo{
 
 typedef struct redisInfo{
     int err;
-    sdt errstr;
+    dst errstr;
     redisServerInfo *redisServerInfo;
     redisClientInfo *redisClientInfo;
     redisMemoryInfo *redisMemoryInfo;
@@ -168,7 +168,8 @@ typedef struct redisInfo{
 } redisInfo;
 
 
-char *getRedisInfoChar(redisContext *context);
+redisReply *getRedisInfoChar(redisContext *context);
 
-redisInfo *getRedisInfoObj(sds ch);
+redisInfo *getRedisInfoObj(dst ch);
+
 #endif

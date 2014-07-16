@@ -15,12 +15,13 @@
  *
  * =====================================================================================
  */
-#include <hiredis/hiredis.h>
 #include <stdlib.h>
 
 #include "info.h"
 #include "redis.h"
 #include "../utils/config.h"
+#include "../utils/cmalloc.h"
+#include "../utils/strings.h"
 
 
 RedisConfig *initRedisConfig(Config *config){
@@ -38,11 +39,14 @@ void redisRun(Config *config){
     RedisConfig *redisConfig;
     redisConfig = initRedisConfig(config);
     if(redisConfig != NULL){
-        printf("redis host is %s ,port is %d",redisConfig->host,redisConfig->port);
         redisContext *redis = redisConnect(redisConfig->host,redisConfig->port); 
-        char *infoChar = getRedisInfoChar(redis); 
-        redisInfo *infoObj = getRedisInfoObj(infoChar);
-        printf("end \n");
+        redisReply *infoReply = getRedisInfoChar(redis); 
+        redisInfo *infoObj = getRedisInfoObj(infoReply->str);
+        if(infoObj->err){
+            printf("get info error:%s\n",infoObj->errstr);
+            dsfree(infoObj->errstr);
+        }
+        freeReplyObject(infoReply);
     }
 }
 
