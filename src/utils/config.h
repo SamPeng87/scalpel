@@ -19,6 +19,7 @@
 #define _UTILS_CONFIG_H
 
 #define isNull(o) (NULL==o)
+#define GET_ARRAY_LEN(array,len) {len = (sizeof(array) / sizeof(array[0]));} 
 
 typedef struct Config {
     int test;

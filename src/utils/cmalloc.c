@@ -53,6 +53,7 @@ void clibc_free(void *ptr){
 #define update_cmalloc_stat_add(__n) __sync_add_and_fetch(&used_memory,(__n))
 #define update_cmalloc_stat_sub(__n) __sync_sub_and_fetch(&used_memory,(__n))
 #else
+
 #define update_cmalloc_stat_add(__n) do { \
     pthread_mutex_lock(&used_memory_mutex); \
     used_memory += (__n); \

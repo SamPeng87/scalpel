@@ -48,6 +48,7 @@ void redisRun(Config *config){
         }
         freeReplyObject(infoReply);
     }
+    printf("%zu\n",cmalloc_used_memory());
 }
 
 
