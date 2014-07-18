@@ -16,12 +16,14 @@
  * =====================================================================================
  */
 #include <stdlib.h>
+#include <unistd.h>
 
 #include "info.h"
 #include "redis.h"
 #include "../utils/config.h"
 #include "../utils/cmalloc.h"
 #include "../utils/strings.h"
+
 
 
 RedisConfig *initRedisConfig(Config *config){
@@ -38,6 +40,10 @@ RedisConfig *initRedisConfig(Config *config){
 void redisRun(Config *config){
     RedisConfig *redisConfig;
     redisConfig = initRedisConfig(config);
+    /*readLastInfo(config);*/
+    /*redisContext *redis = redisConnect(redisConfig->host,redisConfig->port);*/
+    /*redisReply *infoReply = getRedisInfoChar(redis);*/
+    /*printf("%s\n",infoReply->str);*/
     if(redisConfig != NULL){
         redisContext *redis = redisConnect(redisConfig->host,redisConfig->port); 
         redisReply *infoReply = getRedisInfoChar(redis); 
@@ -45,6 +51,15 @@ void redisRun(Config *config){
         if(infoObj->err){
             printf("get info error:%s\n",infoObj->errstr);
             dsfree(infoObj->errstr);
+        }else{
+            long c=0;
+            readListInfo(config,3,&c);
+            /*printf("%lu\n",c);*/
+            /*writeInfo(config,infoObj);*/
+            /*sleep(2);*/
+            /*writeInfo(config,infoObj);*/
+            /*sleep(2);*/
+            /*writeInfo(config,infoObj);*/
         }
         freeReplyObject(infoReply);
     }

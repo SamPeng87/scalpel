@@ -22,7 +22,7 @@
 #define GET_ARRAY_LEN(array,len) {len = (sizeof(array) / sizeof(array[0]));} 
 
 typedef struct Config {
-    int test;
+    char *redisInfoFile;
 } Config;
 
 Config *IntConfigObj(int argc,char const *argv[],char const *configName);

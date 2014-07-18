@@ -21,11 +21,14 @@
 #include <time.h>
 #include <stdbool.h>
 #include "../utils/strings.h"
+#include "../utils/config.h"
 
 typedef struct redisInfoItem{
     const char *name;
     void *value;
     void *(*transform)(void *ch);
+    char type;
+    int index;
 } redisInfoItem;
 
 typedef struct redisSlavesInfo {
@@ -60,7 +63,8 @@ typedef redisCommandInfo* redisCommandInfos;
 typedef struct redisInfo{
     int err;
     dst errstr;
-    redisInfoItems   *items;
+    time_t time;
+    redisInfoItems   items;
     int itemslen;
     redisSlavesInfos *slaves;
     int slaveslen;
@@ -75,4 +79,6 @@ redisReply *getRedisInfoChar(redisContext *context);
 
 redisInfo *getRedisInfoObj(dst ch);
 
+int writeInfo(Config *c,redisInfo *r);
+void readListInfo(Config *c,int size,long *count);
 #endif

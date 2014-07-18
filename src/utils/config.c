@@ -20,6 +20,7 @@
 
 Config *IntConfigObj(int argc,char const *argv[], char const *configName){
     Config *config = calloc(1,sizeof(Config));
+    config->redisInfoFile= "./redisinfo";
     return config;
 }
 
